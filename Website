@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erziehungsratgeber (?) - Musical</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+         /* Allgemeine Stile */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #363636;
+            color: #494949;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #850016;
+            color: rgb#494949;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        header p {
+            font-style: italic;
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .block {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        /* Allgemeine Informationen - oben links */
+        .general-info {
+            flex: 1 1 48%;
+        }
+
+        /* Veranstaltungsort - oben rechts */
+        .venue {
+            flex: 1 1 48%;
+        }
+
+        .block h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #850016;
+        }
+
+        .block p {
+            line-height: 1.6;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+        }
+
+        .venue p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Reservierungen Block */
+        .reservations {
+            width: 100%;
+            padding: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #850016;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #732d91;
+        }
+
+        /* Responsives Design */
+        @media (max-width: 768px) {
+            .general-info, .venue {
+                flex: 1 1 100%;
+            }
+
+            .reservations {
+                padding: 15px;
+            }
+
+            input, select, button {
+                font-size: 0.9rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Erziehungsratgeber (?) - Rosen, Flüche und ein haariges Problem</h1>
+        <p>Schönheit liegt im Herzen – erlebe Die Schöne und das Biest!</p>
+    </header>
+
+    <main>
+        <!-- Allgemeine Informationen -->
+        <div class="block general-info">
+            <h2>Informationen</h2>
+            <p><strong>Schule:</strong> Katholische Marienschule Potsdam</p>
+            <p><strong>Wer:</strong> Seminarkurs 12 Musik</p>
+            <p><strong>Was:</strong> Ein Musical basierend auf dem Märchen "Die Schöne und das Biest"</p>
+            <p><strong>Wann:</strong> 14. und 15. Februar 2025</p>
+            <p><strong>Wo:</strong> Espengrund 10, 14482 Potsdam, Babelsberg, Deutschland</p>
+            <p><strong>Regie:</strong> J. Leschke</p>
+            <p><strong>Lehrkraft:</strong> Dr. Lünenbürger</p>
+        </div>
+
+        <!-- Veranstaltungsort -->
+        <div class="block venue">
+            <h2>Veranstaltungsort</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2410.405574535454!2d13.105663476054922!3d52.391354245316436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a849a8ac6abcc9%3A0x13f78b4ae0f07c11!2sEspengrund%2010%2C%2014457%20Potsdam%2C%20Deutschland!5e0!3m2!1sen!2sus!4v1709954740723!5m2!1sen!2sus" allowfullscreen></iframe>
+            <p>Espengrund 10, 14482 Potsdam</p>
+        </div>
+
+        <!-- Inhaltsangabe -->
+        <div class="block">
+            <h2>Inhaltsangabe</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula sapien at dui vehicula, sit amet ultricies metus malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam sed nisi nec risus aliquam vestibulum. Phasellus vehicula risus id erat interdum, id faucibus justo laoreet.</p>
+            <p>Vivamus ultricies justo nec urna blandit, ac posuere mi facilisis. Ut nec velit in est vestibulum tincidunt. Fusce quis nisl massa. Integer malesuada dui nec turpis dignissim, eget convallis erat viverra.</p>
+        </div>
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Reservierungen</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 20px;
+                    background-color: #f8f9fa;
+                    color: #ffffff;
+                }
+        
+                h1 {
+                    text-align: center;
+                    color: #8e44ad;
+                }
+        
+                .container {
+                    width: 100%;
+                    max-width: 600px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    background-color: white;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+        
+                .reservation-summary {
+                    margin-top: 20px;
+                }
+        
+                .reservation-summary p {
+                    margin-bottom: 10px;
+                    font-size: 1.2rem;
+                }
+        
+                button {
+                    width: 100%;
+                    padding: 10px;
+                    background-color: #8e44ad;
+                    color: rgb(70, 70, 70);
+                    font-size: 1rem;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+        
+                button:hover {
+                    background-color: #732d91;
+                }
+        
+                /* Reservierungsübersicht */
+                .reservation-overview {
+                    margin-top: 50px;
+                    background-color: #ffffff;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                }
+        
+                .reservation-overview h2 {
+                    font-size: 1.5rem;
+                    color: #8e44ad;
+                }
+        
+                .reservation-overview p {
+                    margin-bottom: 10px;
+                    font-size: 1.1rem;
+                }
+        
+                /* Formular */
+                form {
+                    margin-top: 20px;
+                }
+        
+                input, select, button {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 15px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                }
+        
+                .reserved-places {
+                    font-weight: bold;
+                    color: #e74c3c;
+                }
+        
+                .available-places {
+                    font-weight: bold;
+                    color: #2ecc71;
+                }
+            </style>
+        </head>
+        
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Reservierungen</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 20px;
+                    background-color: #f8f9fa;
+                    color: #333;
+                }
+        
+                h1 {
+                    text-align: center;
+                    color: #8e44ad;
+                }
+        
+                .container {
+                    width: 100%;
+                    max-width: 600px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    background-color: white;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+        
+                .reservation-summary {
+                    margin-top: 20px;
+                }
+        
+                .reservation-summary p {
+                    margin-bottom: 10px;
+                    font-size: 1.2rem;
+                }
+        
+                button {
+                    width: 100%;
+                    padding: 10px;
+                    background-color: #8e44ad;
+                    color: white;
+                    font-size: 1rem;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+        
+                button:hover {
+                    background-color: #732d91;
+                }
+        
+                /* Reservierungsübersicht */
+                .reservation-overview {
+                    margin-top: 50px;
+                    background-color: #ffffff;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                }
+        
+                .reservation-overview h2 {
+                    font-size: 1.5rem;
+                    color: #8e44ad;
+                }
+        
+                .reservation-overview p {
+                    margin-bottom: 10px;
+                    font-size: 1.1rem;
+                }
+        
+                /* Formular */
+                form {
+                    margin-top: 20px;
+                }
+        
+                input, select, button {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 15px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                }
+        
+                .reserved-places {
+                    font-weight: bold;
+                    color: #e74c3c;
+                }
+        
+                .available-places {
+                    font-weight: bold;
+                    color: #2ecc71;
+                }
+            </style>
+        </head>
+        <body>
+        
+        
+        
+            <html lang="de">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Reservierungen</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            margin: 0;
+                            padding: 20px;
+                            background-color: #f8f9fa;
+                            color: #333;
+                        }
+                
+                        h1 {
+                            text-align: center;
+                            color: #8e44ad;
+                        }
+                
+                        .container {
+                            display: flex; /* Flexbox verwenden */
+                            justify-content: space-between; /* Abstand zwischen den Blöcken */
+                            flex-wrap: wrap; /* Bei Bedarf die Elemente umbrechen lassen */
+                            gap: 20px; /* Abstand zwischen den Blöcken */
+                        }
+                
+                        .form-container, .overview-container {
+                            width: 48%; /* Beide Container nehmen fast die Hälfte des verfügbaren Platzes ein */
+                            background-color: white;
+                            padding: 20px;
+                            border-radius: 8px;
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                        }
+                
+                        /* Reservierungsübersicht */
+                        .reservation-overview h2 {
+                            font-size: 1.5rem;
+                            color: #8e44ad;
+                        }
+                
+                        .reservation-overview p {
+                            margin-bottom: 10px;
+                            font-size: 1.1rem;
+                        }
+                
+                        /* Formular */
+                        input, select, button {
+                            width: 100%;
+                            padding: 10px;
+                            margin-bottom: 15px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            font-size: 1rem;
+                        }
+                
+                        .reserved-places {
+                            font-weight: bold;
+                            color: #e74c3c;
+                        }
+                
+                        .available-places {
+                            font-weight: bold;
+                            color: #2ecc71;
+                        }
+                
+                        /* Kreis für Reservierungsanzahl */
+                        .reservation-circle {
+                            width: 50px;
+                            height: 50px;
+                            background-color: #8e44ad;
+                            color: white;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                            margin-right: 10px;
+                        }
+                
+                        /* Flex-Container für die Reservierungsübersicht */
+                        .overview-item {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 20px;
+                        }
+                
+                        button {
+                            width: 100%;
+                            padding: 10px;
+                            background-color: #8e44ad;
+                            color: white;
+                            font-size: 1rem;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+                
+                        button:hover {
+                            background-color: #732d91;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Reservierungen</title>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                margin: 0;
+                                padding: 0;
+                                background-color: #444444;
+                            }
+                            .container {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 20px;
+                                padding: 20px;
+                                justify-content: center;
+                            }
+                            .form-container, .overview-container {
+                                background: #fff;
+                                padding: 20px;
+                                border-radius: 8px;
+                                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                                width: 100%;
+                                max-width: 400px;
+                            }
+                            .form-container h2, .overview-container h2 {
+                                text-align: center;
+                            }
+                            form label {
+                                display: block;
+                                margin: 10px 0 5px;
+                            }
+                            form input, form select, form button {
+                                width: 100%;
+                                padding: 10px;
+                                margin-bottom: 15px;
+                                border: 1px solid #ccc;
+                                border-radius: 5px;
+                            }
+                            form button {
+                                background: #007BFF;
+                                color: white;
+                                border: none;
+                                cursor: pointer;
+                            }
+                            form button:hover {
+                                background: #0056b3;
+                            }
+                            .reservation-circle {
+                                display: inline-block;
+                                width: 50px;
+                                height: 50px;
+                                background: #007BFF;
+                                color: white;
+                                font-weight: bold;
+                                font-size: 1.2rem;
+                                border-radius: 50%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-right: 10px;
+                            }
+                            .overview-item {
+                                display: flex;
+                                align-items: center;
+                                margin-bottom: 10px;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                    
+                        <h1 style="text-align: center;">Reservierungen</h1>
+                    
+                        <div class="container">
+                            <!-- Formular Container -->
+                            <div class="form-container">
+                                <h2>Reservierung Formular</h2>
+                                <form id="reservation-form">
+                                    <label for="show-time">Vorstellung auswählen:</label>
+                                    <select id="show-time" name="show-time" required>
+                                        <option value="">Bitte auswählen</option>
+                                        <option value="Freitag, den 14.02.2025 um 19:30 Uhr">Freitag, den 14.02.2025 um 19:30 Uhr</option>
+                                        <option value="Samstag, den 15.02.2025 um 18:00 Uhr">Samstag, den 15.02.2025 um 18:00 Uhr</option>
+                                    </select>
+                    
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+                    
+                                    <label for="email">E-Mail:</label>
+                                    <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+                    
+                                    <label for="tickets">Anzahl der Tickets:</label>
+                                    <select id="tickets" name="tickets" required>
+                                        <option value="">Bitte Anzahl auswählen</option>
+                                        <option value="1">1 Ticket</option>
+                                        <option value="2">2 Tickets</option>
+                                        <option value="3">3 Tickets</option>
+                                        <option value="4">4 Tickets</option>
+                                        <option value="5">5 Tickets</option>
+                                        <option value="6">6 Tickets</option>
+                                        <option value="7">7 Tickets</option>
+                                        <option value="8">8 Tickets</option>
+                                        <option value="9">9 Tickets</option>
+                                        <option value="10">10 Tickets</option>
+                                    </select>
+                    
+                                    <button type="submit">Reservierung speichern</button>
+                                </form>
+                            </div>
+                    
+                            <!-- Übersicht Container -->
+                            <div class="overview-container">
+                                <h2>Reservierungsübersicht</h2>
+                                <div class="overview-item">
+                                    <div class="reservation-circle" id="reservations-14-02-19-30">0</div>
+                                    <p><strong>Freitag, den 14.02.2025 um 19:30 Uhr:</strong> <span id="available-14-02-19-30"></p>
+                                </div>
+                                <div class="overview-item">
+                                    <div class="reservation-circle" id="reservations-15-02-18-00">0</div>
+                                    <p><strong>Samstag, den 15.02.2025 um 18:00 Uhr:</strong> <span id="available-15-02-18-00"></p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <script>
+                            
+                    
+                            function updateReservationCount() {
+                                const reservations = JSON.parse(localStorage.getItem("reservations")) || {
+                                    "Freitag, den 14.02.2025 um 19:30 Uhr": 0,
+                                    "Samstag, den 15.02.2025 um 18:00 Uhr": 0
+                                };
+                    
+                                const availableTickets14 = MAX_TICKETS - reservations["Freitag, den 14.02.2025 um 19:30 Uhr"];
+                                const availableTickets15 = MAX_TICKETS - reservations["Samstag, den 15.02.2025 um 18:00 Uhr"];
+                    
+                                document.getElementById("reservations-14-02-19-30").innerText = reservations["Freitag, den 14.02.2025 um 19:30 Uhr"];
+                                document.getElementById("available-14-02-19-30").innerText = availableTickets14;
+                    
+                                document.getElementById("reservations-15-02-18-00").innerText = reservations["Samstag, den 15.02.2025 um 18:00 Uhr"];
+                                document.getElementById("available-15-02-18-00").innerText = availableTickets15;
+                            }
+                    
+                            document.getElementById("reservation-form").addEventListener("submit", function(event) {
+                                event.preventDefault();
+                    
+                                const showTime = document.getElementById("show-time").value;
+                                const tickets = parseInt(document.getElementById("tickets").value, 10);
+                                const name = document.getElementById("name").value;
+                                const email = document.getElementById("email").value;
+                    
+                                if (showTime && tickets && name && email) {
+                                    let reservations = JSON.parse(localStorage.getItem("reservations")) || {
+                                        "Freitag, den 14.02.2025 um 19:30 Uhr": 0,
+                                        "Samstag, den 15.02.2025 um 18:00 Uhr": 0
+                                    };
+                    
+                                    if (reservations[showTime] + tickets <= MAX_TICKETS) {
+                                        reservations[showTime] += tickets;
+                                        localStorage.setItem("reservations", JSON.stringify(reservations));
+                                        updateReservationCount();
+                                        alert("Reservierung erfolgreich gespeichert!");
+                                    } else {
+                                        alert("Es sind nicht genügend Plätze verfügbar.");
+                                    }
+                                } else {
+                                    alert("Bitte alle Felder ausfüllen.");
+                                }
+                            });
+                    
+                            window.onload = updateReservationCount;
+                        </script>
+                    </body>
+                    </html>
+            
+                    
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Website mit Kontakt Block</title>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                margin: 0;
+                                padding: 0;
+                                background-color: #f4f4f4;
+                            }
+                            .container {
+                                width: 80%;
+                                margin: 0 auto;
+                                padding: 20px;
+                            }
+                            .kontakt-block {
+                                background-color: #fff;
+                                padding: 20px;
+                                border-radius: 8px;
+                                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                            }
+                            .kontakt-block h2 {
+                                margin-top: 0;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                    
+                        <div class="container">
+                            <div class="kontakt-block">
+                                <h2>Kontakt</h2>
+                                <p>Hier können Sie uns erreichen.</p>
+                                <p>Email: Musica-KMPuSK25@web.de </p>
+                            </div>
+                        </div>
+                    
+                    </body>
+                    
+</html>
